@@ -82,7 +82,8 @@ const Invoice = () => {
         <h2 className="w-1/6">Tax</h2>
         <h2 className="w-1/6 text-right">$0</h2>
       </div>
-      <div className="h-[1px] bg-[#C6C6C6] mx-[100px] w-[30%] ml-auto "></div>
+
+      <div className="h-[0.5px] bg-[#C6C6C6] mx-[100px] w-[30%] ml-auto "></div>
 
       <div className="flex justify-end px-[100px] py-3 worksans-font">
         <h2 className="w-1/6">Discount</h2>
