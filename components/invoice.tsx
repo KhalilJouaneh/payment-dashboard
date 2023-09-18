@@ -50,7 +50,7 @@ const Invoice = () => {
         </div>
       </div>
       <div className="h-[1px] bg-[#C6C6C6] mx-[100px]"></div>
-      <div className="flex justify-between px-[100px] py-5 mt-10">
+      <div className="flex justify-between px-[100px] py-5 mt-10 worksans-font">
         <h1 className="font-semibold w-32">Charges</h1>
         <h1 className="font-semibold w-32 text-center">QTY</h1>
         <h1 className="font-semibold w-32 text-right">Amount</h1>
@@ -58,12 +58,12 @@ const Invoice = () => {
       <div className="h-[2px] bg-[#000] mx-[100px]"></div>
 
       {/* Details */}
-      <div className="flex justify-between px-[100px] py-5 font-normal">
+      <div className="flex justify-between px-[100px] py-5 font-normal worksans-font">
         <h2 className="w-32 text-[#626262]">App Design</h2>
         <h2 className="w-32 text-center text-[#626262]">1</h2>
         <h2 className="w-32 text-right">$6,000.00</h2>
       </div>
-      <div className="h-[1px] bg-[#C6C6C6] mx-[100px] font-normal"></div>
+      <div className="h-[1px] bg-[#C6C6C6] mx-[100px] font-normal worksans-font"></div>
       <div className="flex justify-between px-[100px] py-5">
         <h2 className="w-32 text-[#626262]">Website</h2>
         <h2 className="w-32 text-[#626262] text-center">1</h2>
@@ -72,19 +72,19 @@ const Invoice = () => {
       <div className="h-[1px] bg-[#C6C6C6] mx-[100px]"></div>
 
       {/* Subtotal, Tax, and Discount */}
-      <div className="flex justify-end px-[100px] py-3">
+      <div className="flex justify-end px-[100px] py-3 worksans-font">
         <h2 className="w-1/6">Subtotal</h2>
         <h2 className="w-1/6 text-right">$12,000.00</h2>
       </div>
       <div className="h-[1px] bg-[#C6C6C6] mx-[100px] w-[30%] ml-auto"></div>
 
-      <div className="flex justify-end px-[100px] py-3">
+      <div className="flex justify-end px-[100px] py-3 worksans-font">
         <h2 className="w-1/6">Tax</h2>
         <h2 className="w-1/6 text-right">$0</h2>
       </div>
-      <div className="h-[1px] bg-[#C6C6C6] mx-[100px] w-[30%] ml-auto"></div>
+      <div className="h-[1px] bg-[#C6C6C6] mx-[100px] w-[30%] ml-auto "></div>
 
-      <div className="flex justify-end px-[100px] py-3">
+      <div className="flex justify-end px-[100px] py-3 worksans-font">
         <h2 className="w-1/6">Discount</h2>
         <h2 className="w-1/6 text-right">-$200.00</h2>
       </div>
@@ -93,7 +93,6 @@ const Invoice = () => {
       {/* payment info */}
       <div className="flex justify-end px-[100px]">
         <div className="grid grid-cols-2 ml-auto py-10 w-1/3">
-
           <div className="flex flex-col worksans-font text-base font-normal gap-y-4 ">
             <h2 className="font-semibold text-xl text-[#000]">Amount Due</h2>
             <h2 className="font-normal">Due Date</h2>
@@ -102,9 +101,25 @@ const Invoice = () => {
             <h2 className="font-semibold text-xl">$10,000.00</h2>
             <h2 className="font-semibold">Jan 10, 2023</h2>
           </div>
-
         </div>
       </div>
+
+      <div className="h-[1px] bg-[#C6C6C6] mx-[100px]"></div>
+
+      {/* questions */}
+      <div className="flex flex-col px-[100px] worksans-font py-10">
+        <div className="ml-auto w-[33%]">
+          <h1 className="font-semibold">Questions</h1>
+          <h2>ShapeCo</h2>
+          <h2>Shapeco@gmail.com</h2>
+          <h2>123-456-7890</h2>
+        </div>
+      </div>
+
+      {/* footer */}
+      <h1 className="text-center text-[#98A2B3] font-normal worksans-font mb-10 mt-[100px]">
+        invoicing by <span className="font-semibold">sphere</span>{" "}
+      </h1>
     </>
   );
 };
