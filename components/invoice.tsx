@@ -1,19 +1,65 @@
 import Link from "next/link";
 import Image from "next/image";
 
-const Invoice = () => {
+interface Charge {
+  description: string;
+  qty: number;
+  amount: string;
+}
+
+interface QuestionsContact {
+  name: string;
+  email: string;
+  phone: string;
+}
+
+interface InvoiceProps {
+  companyName: string;
+  companyEmail: string;
+  companyWebsite: string;
+  invoiceNumber: string;
+  customerName: string;
+  customerEmail: string;
+  walletID: string;
+  issueDate: string;
+  dueDate: string;
+  amountDue: string;
+  charges: Charge[];
+  subtotal: string;
+  tax: string;
+  discount: string;
+  questionsContact: QuestionsContact;
+}
+
+const Invoice: React.FC<InvoiceProps> = ({
+  companyName,
+  companyEmail,
+  companyWebsite,
+  invoiceNumber,
+  customerName,
+  customerEmail,
+  walletID,
+  issueDate,
+  dueDate,
+  amountDue,
+  charges,
+  subtotal,
+  tax,
+  discount,
+  questionsContact,
+}) => {
   return (
     <>
       <div className="flex justify-between px-[100px] py-10">
         <div className="flex flex-col worksans-font text-base font-normal">
-          <h2 className="font-semibold ">ShapeCo</h2>
-          <h3>ShapeCo@gmail.com</h3>
-          <h3>Shape.Co</h3>
+          <h2 className="font-semibold ">{companyName}</h2>
+          <h3>{companyEmail}</h3>
+          <h3>{companyWebsite}</h3>
         </div>
 
         <div className="flex flex-col worksans-font text-[#000] font-semibold text-[28px]">
           <h2>Invoice</h2>
-          <h2>#17A5B473</h2>
+          <h2>{invoiceNumber}</h2>
         </div>
       </div>
       {/* bottom border */}
@@ -23,8 +69,8 @@ const Invoice = () => {
       <div className="flex justify-between px-[100px] py-10">
         <div className="flex flex-col worksans-font text-base font-normal leading-normal">
           <h2 className="font-semibold ">Customer Contact Info:</h2>
-          <h3>Chef Jeff</h3>
-          <h3>Chef@Jeff.com</h3>
+          <h3>{customerName}</h3>
+          <h3>{customerEmail}</h3>
         </div>
 
         <div className="flex flex-col worksans-font text-base font-normal leading-normal">
@@ -42,10 +88,10 @@ const Invoice = () => {
             <h2>Amount Due</h2>
           </div>
           <div className="flex flex-col worksans-font text-base text-[#000] font-normal gap-y-4">
-            <h2>Cheff Jeff</h2>
-            <h2>Dec 10, 2023</h2>
-            <h2>Jan 10, 2023</h2>
-            <h2>$10,000</h2>
+            <h2>{customerName}</h2>
+            <h2>{issueDate}</h2>
+            <h2>{dueDate}</h2>
+            <h2>{amountDue}</h2>
           </div>
         </div>
       </div>
@@ -58,19 +104,20 @@ const Invoice = () => {
       <div className="h-[2px] bg-[#000] mx-[100px]"></div>
 
       {/* Details */}
-      <div className="flex justify-between px-[100px] py-5 font-normal worksans-font">
-        <h2 className="w-32 text-[#626262]">App Design</h2>
-        <h2 className="w-32 text-center text-[#626262]">1</h2>
-        <h2 className="w-32 text-right">$6,000.00</h2>
-      </div>
-      <div className="h-[1px] bg-[#C6C6C6] mx-[100px] font-normal worksans-font"></div>
-      <div className="flex justify-between px-[100px] py-5">
-        <h2 className="w-32 text-[#626262]">Website</h2>
-        <h2 className="w-32 text-[#626262] text-center">1</h2>
-        <h2 className="w-32 text-right">$6,000.00</h2>
-      </div>
-      <div className="h-[1px] bg-[#C6C6C6] mx-[100px]"></div>
-
+      {charges.map((charge, index) => (
+        <>
+          <div
+            key={index}
+            className="flex justify-between px-[100px] py-5 font-normal worksans-font"
+          >
+            <h2 className="w-32 text-[#626262]">{charge.description}</h2>
+            <h2 className="w-32 text-center text-[#626262]">{charge.qty}</h2>
+            <h2 className="w-32 text-right">{charge.amount}</h2>
+          </div>
+          <div className="h-[1px] bg-[#C6C6C6] mx-[100px]"></div>
+        </>
+      ))}
+    
       {/* Subtotal, Tax, and Discount */}
       <div className="flex justify-end px-[100px] py-3 worksans-font">
         <h2 className="w-1/6">Subtotal</h2>
@@ -111,9 +158,9 @@ const Invoice = () => {
       <div className="flex flex-col px-[100px] worksans-font py-10">
         <div className="ml-auto w-[33%]">
           <h1 className="font-semibold">Questions</h1>
-          <h2>ShapeCo</h2>
-          <h2>Shapeco@gmail.com</h2>
-          <h2>123-456-7890</h2>
+          <h2>{questionsContact.name}</h2>
+          <h2>{questionsContact.email}</h2>
+          <h2>{questionsContact.phone}</h2>
         </div>
       </div>
 

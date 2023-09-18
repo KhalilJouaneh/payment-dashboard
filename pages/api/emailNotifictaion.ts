@@ -20,6 +20,8 @@ export default async function handler(
     },
   });
 
+  console.log(transporter);
+
   // Set up email data
   const mailOptions = {
     from: process.env.EMAIL_USER,
