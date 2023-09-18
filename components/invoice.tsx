@@ -103,7 +103,7 @@ const Invoice: React.FC<InvoiceProps> = ({
       </div>
       <div className="h-[2px] bg-[#000] mx-[100px]"></div>
 
-      {/* Details */}
+      {/* Charges */}
       {charges.map((charge, index) => (
         <>
           <div
@@ -117,7 +117,7 @@ const Invoice: React.FC<InvoiceProps> = ({
           <div className="h-[1px] bg-[#C6C6C6] mx-[100px]"></div>
         </>
       ))}
-    
+
       {/* Subtotal, Tax, and Discount */}
       <div className="flex justify-end px-[100px] py-3 worksans-font">
         <h2 className="w-1/6">Subtotal</h2>
@@ -148,6 +148,14 @@ const Invoice: React.FC<InvoiceProps> = ({
           <div className="flex flex-col worksans-font text-base text-[#000] font-normal gap-y-4 justify-self-end">
             <h2 className="font-semibold text-xl">$10,000.00</h2>
             <h2 className="font-semibold">Jan 10, 2023</h2>
+            <Link
+              href="https://spherepay.co/pay/paymentLink_6623e2d4bb0c43239817e921defdcc88"
+              target="_blank"
+            >
+              <button className="mt-8 w-full border rounded-lg border-[#626262] p-2 bg-[#C6C6C6] hover:bg-gray-200 transition-colors duration-300">
+                Pay Now
+              </button>
+            </Link>
           </div>
         </div>
       </div>
