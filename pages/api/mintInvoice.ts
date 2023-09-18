@@ -31,7 +31,7 @@ const handler = async (req: NextApiRequest, res: NextApiResponse) => {
         upsert: false,
         delegated: true,
         name: "Sphere Invoice",
-        image: "",
+        image: "https://sphere-take-home-beta.vercel.app/invoiceNFT.png",
         externalUrl: "https://spherepay.co/",
         receiverAddress,
         attributes: {
