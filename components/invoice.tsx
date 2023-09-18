@@ -148,6 +148,8 @@ const Invoice: React.FC<InvoiceProps> = ({
           <div className="flex flex-col worksans-font text-base text-[#000] font-normal gap-y-4 justify-self-end">
             <h2 className="font-semibold text-xl">$10,000.00</h2>
             <h2 className="font-semibold">Jan 10, 2023</h2>
+          </div>
+          <div className="flex flex-row justify-between worksans-font text-base text-[#000] font-normal gap-y-4 gap-x-12">
             <Link
               href="https://spherepay.co/pay/paymentLink_6623e2d4bb0c43239817e921defdcc88"
               target="_blank"
