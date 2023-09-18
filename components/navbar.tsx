@@ -20,7 +20,7 @@ const Navbar = () => {
             />
           </Link>
           <h1 className="ml-3 roboto-font text-[24px] font-semibold ">
-            Shape<span className="text-blue-custom">Co</span>
+            Shape<span className="text-blue-logo">Co</span>
           </h1>
         </div>
       </nav>

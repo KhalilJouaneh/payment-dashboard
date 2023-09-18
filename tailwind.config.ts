@@ -9,7 +9,7 @@ const config: Config = {
   theme: {
     extend: {
       colors: {
-        "blue-custom": "#2C61F9",
+        "blue-logo": "#2C61F9",
       },
       fontFamily: {
         roboto: ["Roboto", "sans-serif"],
